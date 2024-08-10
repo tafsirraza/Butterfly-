@@ -1,0 +1,72 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #87CEEB;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.butterfly {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  animation: fly 8s infinite;
+}
+
+.wing {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #FF69B4, #FF1493);
+  border-radius: 50%;
+  opacity: 0.8;
+  transform-origin: center;
+}
+
+.left-wing {
+  left: -90px;
+  transform: rotate(-30deg);
+  animation: flap 0.5s infinite alternate ease-in-out;
+}
+
+.right-wing {
+  right: -90px;
+  transform: rotate(30deg);
+  animation: flap 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes flap {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-100px) translateX(200px);
+  }
+  50% {
+    transform: translateY(0) translateX(400px);
+  }
+  75% {
+    transform: translateY(100px) translateX(600px);
+  }
+  100% {
+    transform: translateY(0) translateX(800px);
+  }
+}
+
